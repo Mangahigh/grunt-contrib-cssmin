@@ -40,7 +40,7 @@ module.exports = function (grunt) {
       options.rebaseTo = path.dirname(file.dest);
 
       try {
-        compiled = new CleanCSS(options).minify(availableFiles);
+        compiled = new CleanCSS(options).minify(availableFiles, availableFiles[0] + '.map');
 
         if (compiled.errors.length) {
           grunt.warn(compiled.errors.toString());
